@@ -12,4 +12,7 @@ class BlogController extends Controller
     public function blogDetailes(){
         return view('blog_detailes');
     }
+    public function product(){
+        return view('product');
+    }
 }

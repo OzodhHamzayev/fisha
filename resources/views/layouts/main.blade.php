@@ -30,8 +30,7 @@
         <div class="loader"></div>
     </div>
 
-
-    @include('components.navbar')
+    @yield('navbar')
 
     @yield('body')
 

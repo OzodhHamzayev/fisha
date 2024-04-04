@@ -169,7 +169,7 @@
                             <div class="product-details">
                                 <div class="pd-title">
                                     <span>oranges</span>
-                                    <h3>Pure Pineapple</h3>
+                                    <h3>{{ $product->title }}</h3>
                                     <a href="#" class="heart-icon"><i class="icon_heart_alt"></i></a>
                                 </div>
                                 <div class="pd-rating">
@@ -181,9 +181,8 @@
                                     <span>(5)</span>
                                 </div>
                                 <div class="pd-desc">
-                                    <p>Lorem ipsum dolor sit amet, consectetur ing elit, sed do eiusmod tempor sum dolor
-                                        sit amet, consectetur adipisicing elit, sed do mod tempor</p>
-                                    <h4>$495.00 <span>629.99</span></h4>
+                                    <p>{{ substr($product->information, 0, 300)}}</p>
+                                    <h4>${{ $product->cheap_price }}<span>{{ $product->money }}</span></h4>
                                 </div>
                                 <div class="pd-color">
                                     <h6>Color</h6>
@@ -231,7 +230,7 @@
                                     <li><span>TAGS</span>: Clothing, T-shirt, Woman</li>
                                 </ul>
                                 <div class="pd-share">
-                                    <div class="p-code">Sku : 00012</div>
+                                    <div class="p-code">Sku : {{ $product->id }}</div>
                                     <div class="pd-social">
                                         <a href="#"><i class="ti-facebook"></i></a>
                                         <a href="#"><i class="ti-twitter-alt"></i></a>
@@ -262,15 +261,9 @@
                                         <div class="row">
                                             <div class="col-lg-7">
                                                 <h5>Introduction</h5>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-                                                    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                                    aliquip ex ea commodo consequat. Duis aute irure dolor in </p>
-                                                <h5>Features</h5>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-                                                    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                                    aliquip ex ea commodo consequat. Duis aute irure dolor in </p>
+                                                <p>
+                                                    {{ $product->information }}
+                                                </p>
                                             </div>
                                             <div class="col-lg-5">
                                                 <img src="{{ asset('assets/img/product-single/tab-desc.jpg') }}" alt="">
@@ -289,15 +282,15 @@
                                                         <i class="fa fa-star"></i>
                                                         <i class="fa fa-star"></i>
                                                         <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star-o"></i>
+                                                        <i class="fa fa-star"></i>
                                                         <span>(5)</span>
                                                     </div>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="p-catagory">Price</td>
+                                                <td class="p-catagory">price</td>
                                                 <td>
-                                                    <div class="p-price">$495.00</div>
+                                                    <div class="p-price">${{ $product->cheap_price }}</div>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -309,13 +302,13 @@
                                             <tr>
                                                 <td class="p-catagory">Availability</td>
                                                 <td>
-                                                    <div class="p-stock">22 in stock</div>
+                                                    <div class="p-stock">{{ $product->clothes }} in stock</div>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td class="p-catagory">Weight</td>
                                                 <td>
-                                                    <div class="p-weight">1,3kg</div>
+                                                    <div class="p-weight">{{ $product->weight }}kg</div>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -331,7 +324,7 @@
                                             <tr>
                                                 <td class="p-catagory">Sku</td>
                                                 <td>
-                                                    <div class="p-code">00012</div>
+                                                    <div class="p-code">{{ $product->id }}</div>
                                                 </td>
                                             </tr>
                                         </table>

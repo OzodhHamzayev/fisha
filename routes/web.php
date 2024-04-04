@@ -20,7 +20,7 @@ use App\http\Controllers\FaqContoller;
 |
 */
 
-Route::get('page/index',[HomeController::class,'index'])
+Route::get('',[HomeController::class,'index'])
     ->name('page.home');
 
 Route::get('page/blog', [BlogController::class,'blogIndex'])
@@ -50,5 +50,7 @@ Route::get('page/faq', [FaqContoller::class, 'faq'])
 Route::get('contac/index', [ContactController::class,'contactIndex'])
     ->name('page.contact');
 
-Route::get('product', [ProductController::class,'product'])
+Route::get('product', [ShopController::class,'product'])
     ->name('page.product');
+Route::get('product/show/{id}', [ShopController::class,'productShow'])
+    ->name('product.show');

@@ -1,5 +1,12 @@
 @extends('layouts.main')
 @section('title', 'home')
+
+@section('navbar')
+
+    @include('components.navbar', ['menuName' => 'home']);
+
+@endsection
+
 @section('body')
     <!-- Header End -->
 
@@ -14,7 +21,7 @@
                             <h1>Black friday</h1>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
                                 incididunt ut labore et dolore</p>
-                            <a href="#" class="primary-btn">Shop Now</a>
+                            <a href="{{ route('shop.index') }}" class="primary-btn">Shop Now</a>
                         </div>
                     </div>
                     <div class="off-card">
