@@ -3,11 +3,11 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-
+use App\Models\Shop;
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Comment>
  */
-class UserFactory extends Factory
+class CommentFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -16,10 +16,10 @@ class UserFactory extends Factory
      */
     public function definition(): array
     {
+        $post = Shop::query()->inRandomOrder()->first();
         return [
-            'name' => fake()->name(),
-            'email'=> fake()->email(),
-            'password'=> bcrypt('password'),
+            'name' => fake()->text(50),
+            'post_id' => $post->id,
         ];
     }
 }

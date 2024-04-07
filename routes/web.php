@@ -52,5 +52,9 @@ Route::get('contac/index', [ContactController::class,'contactIndex'])
 
 Route::get('product', [ShopController::class,'product'])
     ->name('page.product');
+
 Route::get('product/show/{id}', [ShopController::class,'productShow'])
     ->name('product.show');
+
+Route::get('shop/tags/{id}', [ShopController::class,'shopTags'])
+    ->name('shop.tags');

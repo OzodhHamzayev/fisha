@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('information');
+            $table->integer('category_id');
+            $table->integer('money');
             $table->integer('money');
             $table->integer('cheap_price');
             $table->integer('weight');

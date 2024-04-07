@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Tag;
 use Illuminate\Http\Request;
 use App\Models\Shop;
+use App\Models\Comment;
 class ShopController extends Controller
 {
     public function shopIndex(){
@@ -14,8 +15,16 @@ class ShopController extends Controller
         return view('shopping-cart');
     }
     public function productShow(int $id){
-        $shop = Shop::query()->with('category')->find($id);
-
+        $shop = Shop::query()->with(['category','tags', 'products', 'user'])->find($id);
+        dd($shop->toArray());
         return view('product', ['product' => $shop]);
     }
+    public function shopTags(int $id){
+        $shopTags = Tag::query()->with('shops')->find($id);
+        if($shopTags == null){
+            return redirect()->back();
+        }
+        return view('shop-tags', ['shopTags'=> $shopTags]);
+    }
+
 }
