@@ -15,16 +15,16 @@ class Shop extends Model
         'cheap_price',
         'weight',
         'clothes',
-        'category_id'
+        'category_id',
+        'user_id',
+        'comment_id'
+        
     ];
     public function category(){
         return $this->hasOne(Category::class, 'id','category_id');
     }
     public function tags(){
         return $this->belongsToMany(Tag::class, 'shop_tags','shop_id', 'tag_id');
-    }
-    public function comments(){
-        return $this->hasOne(Shop::class,'id','comment');
     }
     public function user(){
         return $this->hasOne(User::class,'id','user_id');

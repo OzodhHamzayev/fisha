@@ -15,8 +15,11 @@ class ShopController extends Controller
         return view('shopping-cart');
     }
     public function productShow(int $id){
-        $shop = Shop::query()->with(['category','tags', 'products', 'user'])->find($id);
-        dd($shop->toArray());
+        $shop = Shop::query()->with(['category','tags', 'comments', 'user'])->find($id);
+        if($shop == null){
+            return redirect()->route('shop.index');
+        }
+        // dd($shop->toArray());
         return view('product', ['product' => $shop]);
     }
     public function shopTags(int $id){

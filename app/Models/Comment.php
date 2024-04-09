@@ -11,6 +11,12 @@ class Comment extends Model
     public $fillable = [
         'name',
         'post_id',
+        'user_id',
     ];
-
+    public function user(){
+        return $this->hasOne(User::class,'id', 'user_id');
+    }
+    public function shop(){
+        return $this->hasOne(Shop::class, 'id', 'shop_id');
+    }
 }

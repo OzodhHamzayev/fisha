@@ -8,6 +8,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ShopController;
 use App\http\Controllers\CheckContoller;
+use App\Http\Controllers\CommentController;
 use App\http\Controllers\FaqContoller;
 /*
 |--------------------------------------------------------------------------
@@ -50,11 +51,11 @@ Route::get('page/faq', [FaqContoller::class, 'faq'])
 Route::get('contac/index', [ContactController::class,'contactIndex'])
     ->name('page.contact');
 
-Route::get('product', [ShopController::class,'product'])
-    ->name('page.product');
-
 Route::get('product/show/{id}', [ShopController::class,'productShow'])
     ->name('product.show');
 
 Route::get('shop/tags/{id}', [ShopController::class,'shopTags'])
     ->name('shop.tags');
+
+Route::post('product/comment', [CommentController::class, 'comment'])
+    ->name('product.comment');

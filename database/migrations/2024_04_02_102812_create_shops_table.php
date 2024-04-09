@@ -16,12 +16,12 @@ return new class extends Migration
             $table->string('title');
             $table->text('information');
             $table->integer('category_id');
-            $table->integer('money');
+            $table->integer('user_id');
             $table->integer('money');
             $table->integer('cheap_price');
             $table->integer('weight');
             $table->integer('clothes');
-            $table->integer('category_id');
+            $table->integer('comment_id');
             $table->timestamps();
         });
     }

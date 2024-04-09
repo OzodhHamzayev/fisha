@@ -1,7 +1,7 @@
 <?php
 
 namespace Database\Factories;
-
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Shop;
 /**
@@ -17,9 +17,11 @@ class CommentFactory extends Factory
     public function definition(): array
     {
         $post = Shop::query()->inRandomOrder()->first();
+        $user = User::query()->inRandomOrder()->first();
         return [
             'name' => fake()->text(50),
             'post_id' => $post->id,
+            'user_id' => $user->id,
         ];
     }
 }
