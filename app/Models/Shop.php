@@ -20,13 +20,16 @@ class Shop extends Model
         'comment_id'
         
     ];
-    public function category(){
-        return $this->hasOne(Category::class, 'id','category_id');
-    }
     public function tags(){
         return $this->belongsToMany(Tag::class, 'shop_tags','shop_id', 'tag_id');
     }
+    public function comments(){
+        return $this->hasMany(Comment::class, 'shop_id', 'id');
+    }
     public function user(){
         return $this->hasOne(User::class,'id','user_id');
+    }
+    public function categories(){
+        return $this->belongsToMany(Category::class, 'shop_category', 'category_id' ,'shop_id');
     }
 }

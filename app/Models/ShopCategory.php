@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class ShopCategory extends Model
 {
     use HasFactory;
-    public $fillable = [
-        "name",
-        "email",
-        "password",
-        'image',
+
+    public $table = 'shop_category';
+    public $fillable = [    
+        'category_id',
+        'shop_id',
     ];
-}
+} 

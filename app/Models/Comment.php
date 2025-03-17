@@ -9,8 +9,8 @@ class Comment extends Model
 {
     use HasFactory;
     public $fillable = [
-        'name',
-        'post_id',
+        'content',
+        'shop_id',
         'user_id',
     ];
     public function user(){
@@ -20,3 +20,7 @@ class Comment extends Model
         return $this->hasOne(Shop::class, 'id', 'shop_id');
     }
 }
+
+
+
+

@@ -2,7 +2,7 @@
 @section('title', 'home')
 
 @section('navbar')
-
+    
     @include('components.navbar', ['menuName' => 'home']);
 
 @endsection

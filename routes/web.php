@@ -59,3 +59,6 @@ Route::get('shop/tags/{id}', [ShopController::class,'shopTags'])
 
 Route::post('product/comment', [CommentController::class, 'comment'])
     ->name('product.comment');
+
+Route::get('shop/category/{id}', [ShopController::class, 'ShopCategory'])
+    ->name('shop.category');

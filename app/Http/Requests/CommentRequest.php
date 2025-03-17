@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class CommentRequest extends FormRequest
 {
@@ -23,7 +24,7 @@ class CommentRequest extends FormRequest
     {
         return [
             'name' => ['required','string'],
-            'shop_id' => ['required','integer'],
+            'shop_id' => ['required','integer', Rule::exists('shops', 'id')],
         ];
     }
 }

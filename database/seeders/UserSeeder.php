@@ -15,6 +15,7 @@ class UserSeeder extends Seeder
         User::query()->create([
             "name"=> "admin",
             "email"=> "admin@admin.com",
+            "image"=> "assets/img/profilImg.png",
             "password"=> bcrypt("password"),
         ]);
         User::factory(10)->create();

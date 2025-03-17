@@ -21,7 +21,6 @@ return new class extends Migration
             $table->integer('cheap_price');
             $table->integer('weight');
             $table->integer('clothes');
-            $table->integer('comment_id');
             $table->timestamps();
         });
     }

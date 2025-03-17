@@ -16,12 +16,12 @@ class CommentFactory extends Factory
      */
     public function definition(): array
     {
-        $post = Shop::query()->inRandomOrder()->first();
+        $shop = Shop::query()->inRandomOrder()->first();
         $user = User::query()->inRandomOrder()->first();
         return [
-            'name' => fake()->text(50),
-            'post_id' => $post->id,
+            'content' => fake()->text(50),
+            'shop_id' => $shop->id,
             'user_id' => $user->id,
         ];
     }
-}
+}                       

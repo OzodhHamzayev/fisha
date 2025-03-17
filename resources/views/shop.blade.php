@@ -169,31 +169,33 @@
                     </div>
                     <div class="product-list">
                         <div class="row">
+                            {{-- @dd($products->toArray()) --}}
                             @foreach ($products as $product)
-                            <div class="col-lg-4 col-sm-6">
-                                <div class="product-item">
-                                    <div class="pi-pic">
-                                        <img src="{{ asset('assets/img/products/product-1.jpg') }}" alt="">
-                                        <div class="sale pp-sale">Sale</div>
-                                        <div class="icon">
-                                            <i class="icon_heart_alt"></i>
+                                <div class="col-lg-4 col-sm-6">
+                                    <div class="product-item">
+                                        <div class="pi-pic">
+                                            <img src="{{ asset('assets/img/products/product-1.jpg') }}" alt="">
+                                            <div class="sale pp-sale">Sale</div>
+                                            <div class="icon">
+                                                <i class="icon_heart_alt"></i>
+                                            </div>
+                                            <ul>
+                                                <li class="quick-view"><a
+                                                        href="{{ route('product.show', $product->id) }}">BUY</a></li>
+                                            </ul>
                                         </div>
-                                        <ul>
-                                            <li class="quick-view"><a href="{{ route('product.show', $product->id) }}">BUY</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="pi-text">
-                                        <div class="catagory-name">{{ $product->category->name   }}</div>
-                                        <a href="#">
-                                            <h5>{{ $product->title }}</h5>
-                                        </a>
-                                        <div class="product-price">
-                                            ${{ $product->cheap_price }}
-                                            <span>{{ $product->money }} </span>
+                                        <div class="pi-text">
+                                            {{-- <div class="catagory-name">{{ $product->category->name }}</div> --}}
+                                            <a href="#">
+                                                <h5>{{ $product->title }}</h5>
+                                            </a>
+                                            <div class="product-price">
+                                                ${{ $product->cheap_price }}
+                                                <span>{{ $product->money }} </span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
                             @endforeach
                         </div>
                     </div>
